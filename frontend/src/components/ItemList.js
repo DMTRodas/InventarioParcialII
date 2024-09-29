@@ -1,6 +1,6 @@
 import React from 'react';
 
-const ItemList = ({ items, onEdit, onDelete }) => {  // Recibe la función onDelete como prop
+const ItemList = ({ items, onEdit, onDelete }) => {  
     return (
         <div>
             <ul>

@@ -8,11 +8,11 @@ class ItemService {
     }
 
     createProduct(product) {
-        return axios.post(API_URL, product); // Cambié "item" por "product"
+        return axios.post(API_URL, product); 
     }
 
     updateProduct(productId, product) {
-        return axios.put(`${API_URL}/${productId}`, product); // Cambié "item" por "product"
+        return axios.put(`${API_URL}/${productId}`, product); 
     }
 
     deleteProduct(productId) {

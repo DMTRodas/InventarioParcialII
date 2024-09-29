@@ -9,7 +9,7 @@ const ItemForm = ({ onAddItem, itemToEdit, onUpdateItem }) => {
         availability: false,
     });
 
-    // Si recibimos un ítem para editar, lo cargamos en el formulario
+    
     useEffect(() => {
         if (itemToEdit) {
             setItem(itemToEdit);
@@ -33,20 +33,20 @@ const ItemForm = ({ onAddItem, itemToEdit, onUpdateItem }) => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        console.log('Datos del producto antes de enviar:', item);  // Verificar el valor de availability
+        console.log('Datos del producto antes de enviar:', item);  
         if (itemToEdit) {
-            // Si estamos editando un ítem, lo actualizamos
+           
             ItemService.updateProduct(item.id, item)
                 .then(response => {
                     console.log('Producto actualizado', response.data);
                     setItem({ name: '', description: '', price: '', availability: false });
-                    onUpdateItem();  // Recargar la lista después de editar
+                    onUpdateItem();  
                 })
                 .catch(error => {
                     console.error('Error actualizando el producto', error);
                 });
         } else {
-            // Si es un nuevo ítem, lo creamos
+            
             ItemService.createProduct(item)
                 .then(response => {
                     console.log('Producto creado', response.data);

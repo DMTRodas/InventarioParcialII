@@ -27,7 +27,7 @@ function App() {
   };
 
   const handleEditItem = (item) => {
-    setItemToEdit(item);  // Poner el ítem a editar en el formulario
+    setItemToEdit(item);  
   };
 
   const handleUpdateItem = () => {
